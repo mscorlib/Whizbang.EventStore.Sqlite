@@ -1,25 +1,23 @@
 -- ----------------------------
--- Table structure for `Events`
+-- Table structure for ]Events]
 -- ----------------------------
-DROP TABLE IF EXISTS `Events`;
-CREATE TABLE `Events` (
-  `SourceId` binary(16) NOT NULL,
-  `Version` int(11) NOT NULL,
-  `Timestamp` datetime NOT NULL,
-  `Type` varchar(1000) NOT NULL,
-  `Data` varchar(5000) NOT NULL,
-  PRIMARY KEY (`SourceId`,`Version`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE [Events] (
+  [SourceId] uniqueidentifier NOT NULL,
+  [Version] int NOT NULL,
+  [Timestamp] datetime NOT NULL,
+  [Type] varchar(1000) NOT NULL,
+  [Data] varchar(5000) NOT NULL,
+  CONSTRAINT [sqlite_autoindex_Events_1] PRIMARY KEY ([SourceId], [Version])
+) 
 
 -- ----------------------------
--- Table structure for `Snapshots`
+-- Table structure for ]Snapshots]
 -- ----------------------------
-DROP TABLE IF EXISTS `Snapshots`;
-CREATE TABLE `Snapshots` (
-  `SourceId` binary(16) NOT NULL,
-  `Version` int(11) NOT NULL,
-  `Timestamp` datetime NOT NULL,
-  `Type` varchar(1000) NOT NULL,
-  `Data` varchar(5000) NOT NULL,
-  PRIMARY KEY (`SourceId`,`Version`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE [Snapshots] (
+  [SourceId] uniqueidentifier NOT NULL,
+  [Version] int NOT NULL,
+  [Timestamp] datetime NOT NULL,
+  [Type] varchar(1000) NOT NULL,
+  [Data] varchar(5000) NOT NULL,
+  CONSTRAINT [sqlite_autoindex_Snapshots_1] PRIMARY KEY ([SourceId], [Version])
+)
